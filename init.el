@@ -7,7 +7,13 @@
 (set-fringe-mode 10)
 (menu-bar-mode -1)
 
+;; Base UI configuration
 (set-face-attribute 'default nil :font "Cascadia Code" :height 120)
+
+(column-number-mode)
+(global-display-line-numbers-mode)
+
+(xterm-mouse-mode t)
 
 ;; Initializen package sources
 (require 'package)
@@ -30,9 +36,29 @@
 (use-package all-the-icons)
 
 (use-package doom-modeline
-  :init (doom-modeline-mode 1))
+  :init (doom-modeline-mode))
 
-(use-package ivy
+(use-package doom-themes
+  :config (load-theme 'doom-one-light t))
+
+(use-package dashboard
+  :config (dashboard-setup-startup-hook))
+
+(use-package which-key
+  :init (which-key-mode)
   :diminish
   :config
-  (ivy-mode 1))
+  (setq which-key-idle-delay 0.3))
+
+(use-package rainbow-delimiters
+  :hook (prog-mode . rainbow-delimiters-mode))
+
+(use-package ivy
+  :init (ivy-mode)
+  :diminish)
+
+(use-package ivy-rich
+  :init (ivy-rich-mode))
+
+(use-package counsel
+  :init (counsel-mode))
