@@ -15,6 +15,9 @@
 
 (xterm-mouse-mode t)
 
+;; Set custom file
+(setq custom-file (expand-file-name "custom.el" user-emacs-directory))
+
 ;; Initializen package sources
 (require 'package)
 
