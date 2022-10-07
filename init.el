@@ -21,9 +21,10 @@
 ;; Initializen package sources
 (require 'package)
 
-(setq package-archives '(("melpa" . "https://melpa.org/packages/")
-			 ("org" . "https://orgmode.org/elpa/")
-			 ("elpa" . "https://elpa.gnu.org/packages/")))
+(setq package-archives
+      '(("melpa" . "https://mirrors.tuna.tsinghua.edu.cn/elpa/melpa/")
+	("org" . "https://mirrors.tuna.tsinghua.edu.cn/elpa/org/")
+	("elpa" . "https://mirrors.tuna.tsinghua.edu.cn/elpa/gnu/")))
 
 (package-initialize)
 (unless package-archive-contents
